@@ -19,7 +19,10 @@ class API(object):
         payload = json.dumps(requestObject)
         resp = requests.post(self.url, data=payload, headers=self.headers)
         try:
-            return json.loads(resp.text)
+			# Update for latest firmware: 
+			# 		The latest firmware puts 6 junk chars in the beginning of the json stream
+			# 		Filtering that out.
+            return json.loads(resp.text[6:])
         except ValueError as e:
             print("Error decoding: %".format(repr(resp.text)))
             print e

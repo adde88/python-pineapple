@@ -12,8 +12,8 @@ Some hints:
 ##### Instantiate a Pineapple object:
 <pre>
 API_TOKEN = "xxxxxxxxxx..."
-from pineapple.pineapple import Pineapple
-fruit = Pineapple(API_TOKEN)
+from pineapple import *
+fruit = pineapple.Pineapple(API_TOKEN)
 </pre>
 ##### Add a notification:
 <pre>
@@ -26,6 +26,14 @@ fruit.getModule("pineap").enable()
 ##### Deauth/dissasoc the clients `73:65:62:6b:69:6e` and `6e:65:73:67:69:61` from the bssid `6e:74:64:69:63:6b` 5 times on channel 1
 <pre>
 fruit.getModule("pineap").deauth('6e:74:64:69:63:6b', ['73:65:62:6b:69:6e', '6e:65:73:67:69:61'], 5, 1)
+</pre>
+##### Get SSID Pool
+<pre>
+p = fruit.getModule("pineap").getSSIDPool()
+</pre>
+Returns a dict. The pool is on the key "ssidPool" separated by newlines. To get a quick list, do the following:
+<pre>
+ssids = p['ssidPool'].split('\n')
 </pre>
 
 *To generate API tokens, use the [API Tokens](https://github.com/735tesla/Pineapple-API-Tokens-Module/) module*
