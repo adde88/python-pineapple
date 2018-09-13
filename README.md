@@ -35,5 +35,15 @@ Returns a dict. The pool is on the key "ssidPool" separated by newlines. To get 
 <pre>
 ssids = p['ssidPool'].split('\n')
 </pre>
-
+##### Download Scans
+Some support for download files via token was added to api and recon
+<pre>
+fruit.getModule("recon").downloadResults(1)
+<pre>
+Will return a dict with key "download" and a unique download token for the results of Scan ID 1. So knowing that,
+you can call api.download now to get the results
+<pre>
+myScan = fruit.api.download(fruit.getModule("recon").downloadResults(1)['download'])
+</pre>
+myScan will be the raw file text. In the case of a recon scan, it is json. So you can make it more usable with json.loads(myScan)
 *To generate API tokens, use the [API Tokens](https://github.com/735tesla/Pineapple-API-Tokens-Module/) module*

@@ -26,3 +26,14 @@ class API(object):
         except ValueError as e:
             print("Error decoding: %".format(repr(resp.text)))
             print e
+
+    def download(self, dFile):
+        """
+            Download a file by token. Just returning text instead of json as a just in case.
+            Easy to handle by just grabbing the response object and hitting it with json.loads
+                -- This was added to be able to download recon scans but I'm sure someone else might have another use for it
+        """
+        requestObject = {'apiToken': self.apiToken, 'download': dFile }
+        resp = requests.get(self.url, requestObject)
+        return resp.text
+
