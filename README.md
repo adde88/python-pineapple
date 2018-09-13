@@ -39,7 +39,7 @@ ssids = p['ssidPool'].split('\n')
 Some support for download files via token was added to api and recon
 <pre>
 fruit.getModule("recon").downloadResults(1)
-<pre>
+</pre>
 Will return a dict with key "download" and a unique download token for the results of Scan ID 1. So knowing that,
 you can call api.download now to get the results
 <pre>
