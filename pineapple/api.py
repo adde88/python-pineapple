@@ -22,7 +22,11 @@ class API(object):
 			# Update for latest firmware: 
 			# 		The latest firmware puts 6 junk chars in the beginning of the json stream
 			# 		Filtering that out.
-            return json.loads(resp.text[6:])
+            if resp.text[0:6] == ")]}',\n":
+                return json.loads(resp.text[6:])
+            else:
+                return json.loads(resp.text)
+
         except ValueError as e:
             print("Error decoding: %".format(repr(resp.text)))
             print e
