@@ -8,6 +8,9 @@ Some hints:
 - To find out more about the WiFi Pineapple API itself, set `debug = True` when instantiating your `Pineapple()`s and it will log the HTTP requests it makes
 - Read the WiFi Pineapple php source located on your pineapple at `/pineapple/modules/$modulename/api/module.php` as well as the corresponding python files in this project
 
+## Notes
+This is currently undergoing a rewrite and some methods may appear to have duplicate functionality. This is being done to keep backward compatibility. Method names will mirror those shipped with Pineapple Firmware and associated Modules. Planning on adding some additional helpers. This README will be updated over time. Feel free to let me know if you want a specific feature.
+
 ## Examples:
 ##### Instantiate a Pineapple object:
 <pre>
