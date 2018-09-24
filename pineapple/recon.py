@@ -16,6 +16,7 @@ class Recon(Module):
                 1 - 5 Ghz
                 2 - Both
         """
+        return self.request('startNormalScan', {'scanType': scanType, 'scanDuration': scanDuration})
     def startLiveScan(self, scanType, scanDuration):
         """ Start a Live Scan
             Scan Type:
@@ -23,7 +24,7 @@ class Recon(Module):
                 1 - 5 Ghz
                 2 - Both
         """
-        return self.request('startNormalScan', { 'scanType': scanType, 'scanDuration': scanDuration})
+        return self.request('startLiveScan', { 'scanType': scanType, 'scanDuration': scanDuration})
     def checkPineAPDaemon(self):
         """ Errors on return but added to mirror recon api """
         return self.request('checkPineAPDaemon')
