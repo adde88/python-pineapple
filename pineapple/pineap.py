@@ -5,6 +5,48 @@ class Pineap(Module):
     def __init__(self, api):
         super(Pineap, self).__init__(api, 'PineAP')
 
+        """
+            List of Methods this module needs:
+
+            getPool
+clearPool
+addSSID
+addSSIDs
+removeSSID
+getPoolLocation
+setPoolLocation
+setPineAPSettings
+getPineAPSettings
+setEnterpriseSettings
+getEnterpriseSettings
+detectEnterpriseCertificate
+generateEnterpriseCertificate
+clearEnterpriseCertificate
+clearEnterpriseDB
+getEnterpriseData
+startHandshakeCapture
+stopHandshakeCapture
+getHandshake
+getAllHandshakes
+checkCaptureStatus
+downloadHandshake
+downloadAllHandshakes
+clearAllHandshakes
+deleteHandshake
+deauth
+enable
+disable
+enableAutoStart
+disableAutoStart
+downloadPineAPPool
+loadProbes
+inject
+countSSIDs
+downloadJTRHashes
+downloadHashcatHashes
+
+        """
+
     def getSSIDPool(self):
         """
             Return raw SSID Pool.
