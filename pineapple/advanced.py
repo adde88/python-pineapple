@@ -2,10 +2,10 @@ from module import Module
 
 class Advanced(Module):
     def __init__(self, api):
-    """
+        """
         Methods this module should have:
         
-getResources
+    getResources
 dropCaches
 getUSB
 getFstab
@@ -23,7 +23,7 @@ checkApiToken
 addApiToken
 getApiTokens
 revokeApiToken
-    """
+        """
 
         super(Advanced, self).__init__(api, 'Advanced')
     def getResources(self):
