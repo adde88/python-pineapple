@@ -2,6 +2,29 @@ from module import Module
 
 class Advanced(Module):
     def __init__(self, api):
+    """
+        Methods this module should have:
+        
+getResources
+dropCaches
+getUSB
+getFstab
+saveFstab
+getCSS
+saveCSS
+formatSDCard
+formatSDCardStatus
+checkForUpgrade
+downloadUpgrade
+getDownloadStatus
+performUpgrade
+getCurrentVersion
+checkApiToken
+addApiToken
+getApiTokens
+revokeApiToken
+    """
+
         super(Advanced, self).__init__(api, 'Advanced')
     def getResources(self):
         return self.request('getResources')
